@@ -73,7 +73,7 @@ export default function ArticleCreationRoute({
         <CardHeader>
           <CardTitle>Article Details</CardTitle>
           <CardDescription>
-            Lipsum dolor sit amet, consectetur adipiscing elit
+            Let's create a new article for your blog.
           </CardDescription>
         </CardHeader>
         <CardContent>
