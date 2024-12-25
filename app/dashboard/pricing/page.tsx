@@ -21,7 +21,7 @@ async function getData(userId: string) {
       status: true,
       User: {
         select: {
-          customerId: true,
+          customerID: true,
         },
       },
     },
@@ -38,7 +38,7 @@ export default async function PricingPage() {
     "use server";
 
     const session = await stripe.billingPortal.sessions.create({
-      customer: data?.User?.customerId as string,
+      customer: data?.User?.customerID as string,
       return_url:
        process.env.NODE_ENV === "production"?
         "https://blogify-app-vert.vercel.app/dashboard":

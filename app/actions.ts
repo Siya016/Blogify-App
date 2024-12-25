@@ -49,6 +49,7 @@ export async function CreateSiteAction(prevState: any, formData: FormData) {
 
       const response = await prisma.site.create({
         data: {
+          updatedAt: new Date(),
           description: submission.value.description,
           name: submission.value.name,
           subdirectory: submission.value.subdirectory,
@@ -112,6 +113,7 @@ export async function CreatePostAction(prevState: any, formData: FormData) {
       image: submission.value.coverImage,
       userId: user.id,
       siteId: formData.get("siteId") as string,
+      updatedAt: new Date(),
     },
   });
 
@@ -196,13 +198,13 @@ export async function CreateSubscription() {
       id: user.id,
     },
     select: {
-      customerId: true,
+      customerID: true,
       email: true,
       firstName: true,
     },
   });
 
-  if (!stripeUserId?.customerId) {
+  if (!stripeUserId?.customerID) {
     const stripeCustomer = await stripe.customers.create({
       email: stripeUserId?.email,
       name: stripeUserId?.firstName,
@@ -213,13 +215,13 @@ export async function CreateSubscription() {
         id: user.id,
       },
       data: {
-        customerId: stripeCustomer.id,
+        customerID: stripeCustomer.id,
       },
     });
   }
 
   const session = await stripe.checkout.sessions.create({
-    customer: stripeUserId.customerId as string,
+    customer: stripeUserId.customerID as string,
     mode: "subscription",
     billing_address_collection: "auto",
     payment_method_types: ["card"],

@@ -31,7 +31,7 @@ export async function POST(req: Request) {
 
     const user = await prisma.user.findUnique({
       where: {
-        customerId: customerId,
+        customerID: customerId,
       },
     });
 
@@ -39,7 +39,7 @@ export async function POST(req: Request) {
 
     await prisma.subscription.create({
       data: {
-        stripeSubscriptionId: subscription.id,
+        stripeSubscriptionid: subscription.id,
         userId: user.id,
         currentPeriodStart: subscription.current_period_start,
         currentPeriodEnd: subscription.current_period_end,
@@ -57,7 +57,7 @@ export async function POST(req: Request) {
 
     await prisma.subscription.update({
       where: {
-        stripeSubscriptionId: subscription.id,
+        stripeSubscriptionid: subscription.id,
       },
       data: {
         planId: subscription.items.data[0].price.id,
