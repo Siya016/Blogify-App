@@ -73,7 +73,7 @@ export default function ArticleCreationRoute({
         <CardHeader>
           <CardTitle>Article Details</CardTitle>
           <CardDescription>
-            Let's create a new article for your blog.
+            Let&rsquo;s create a new article for your blog.
           </CardDescription>
         </CardHeader>
         <CardContent>
