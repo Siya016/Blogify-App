@@ -45,4 +45,7 @@ git clone https://github.com/your-username/blogify.git
 cd blogify
 
 
-demo: https://drive.google.com/file/d/1UzyVIwziQ3MZRnJbUY6wGRRwk25FjGtB/view?usp=sharing
+
+
+demo:   https://drive.google.com/file/d/1UzyVIwziQ3MZRnJbUY6wGRRwk25FjGtB/view?usp=sharing
+
