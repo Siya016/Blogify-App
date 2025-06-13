@@ -43,3 +43,6 @@ Follow these steps to set up the project locally.
 ```bash
 git clone https://github.com/your-username/blogify.git
 cd blogify
+
+
+demo: https://drive.google.com/file/d/1UzyVIwziQ3MZRnJbUY6wGRRwk25FjGtB/view?usp=sharing
